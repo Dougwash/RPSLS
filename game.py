@@ -70,21 +70,11 @@ class Game:
         return self.player_1_gesture
 
 
-    def run_game(self):
-        self.game_rules()
-        self.find_name()
-        self.choose_gesture()       
-        self.ai_or_human()
-        print(self.player_1_name)
-        print(self.player_1_gesture)
-        print(self.player_2_name)
-        print(self.player_2_gesture)
         
 
     def battle(self):
         if self.player_1_gesture != self.player_2_gesture :
             return self.battle()
-
         elif self.player_1_gesture == "Rock":
             "Rock" > "Scissors"
             'Rock' < 'Paper'
@@ -96,10 +86,33 @@ class Game:
             'Scissors' > "Lizard"
             'Scissors' > "Paper"
         elif self.player_1_gesture == "Paper":
-            
+            'Paper' < 'Scissors'            
+            'Paper' > 'Rock'            
+            'Paper' < 'Lizard'            
+            'Paper' > 'Spock'            
         elif self.player_1_gesture == "Lizard":
+            'Lizard' < 'Rock'
+            'Lizard' > 'Spock'
+            'Lizard' < 'Scissors'
+            'Lizard' > 'Paper'
         elif self.player_1_gesture == "Spock":
+            'Spock' < 'Lizard'
+            'Spock' > 'Scissors'
+            'Spock' < 'Paper'
+            'Spock' > 'Rock'
+
             
+    def run_game(self):
+        self.game_rules()
+        self.find_name()
+        self.choose_gesture()       
+        self.ai_or_human()
+        self.battle()
+        print(self.player_1_name)
+        print(self.player_1_gesture)
+        print(self.player_2_name)
+        print(self.player_2_gesture)
+        
         # create a function to play the hands , test p1 and p2 ability to pick a gesture
         # using if, elif and else to check for win conditions looking at each players chosen gesture self.player_1.chosen_gesures 
 
