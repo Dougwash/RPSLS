@@ -12,6 +12,7 @@ class Human(Player):
         
     def pick_gesture (self):
         player_1_gesture = Player.choose_gesture(self)
+        player_1_gesture = self.chosen_gesture
         print(f'{self.chosen_gesture} was chosen\n')
         return player_1_gesture
 
