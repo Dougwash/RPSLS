@@ -9,9 +9,3 @@ class AI(Player):
    
     def choose_gesture(self):  # using method overide to give custom AI logic
         self.chosen_gesture = random.choice(self.list_of_gestures)
-        # print(f'AI choose {self.chosen_gesture}')
-
-# AI(None)
-
-# name = AI(None)
-# print (name.ai_player_2)

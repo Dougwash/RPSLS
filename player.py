@@ -33,30 +33,4 @@ class Player:
 
         
             
-    # def human_gesture_pick(self):    
-    #     p2g =  input('pick your gesture\n 1 for Rock \n2 for Paper \n 3 for Scissors \n 4 for Lizard \n5 Spock \n:  ')
-    #     if p2g == 1:
-    #         self.player1_geture = self.list_of_gestures[1]
-    #     elif p2g == 2:
-    #         self.player1_geture = self.list_of_gestures[2]
-    #     elif p2g == 3:
-    #         self.player1_geture = self.list_of_gestures[3]
-    #     elif p2g == 4:
-    #         self.player1_geture = self.list_of_gestures[4]
-    #     elif p2g == 5:
-    #         self.player1_geture = self.list_of_gestures[5]
-    #     else:
-    #         print('please try again')
-    #         self.player1_gesture()
-
-
-# Player(None,None,None,None)
-# # d=Player(None,None,None,None)
-# print (player_1_name)
-# print (d.player1_geture)
-# print (d.player_2_name)
-# print(d.player2_geture)
-
-        # return super().player1_name()
-
   
