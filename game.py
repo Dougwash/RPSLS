@@ -82,11 +82,11 @@ class Game:
                 if self.player_2.chosen_gesture in w_hand:
                     self.player_1.wins += 1 
                     time.sleep(1)
-                    print (f'\n{self.player_1_name} wins current score: P1:{self.player_1.wins}, P2:{self.player_2.wins}')
+                    print (f'\n{self.player_1_name} wins current score: {self.player_1_name}:{self.player_1.wins}, {self.player_2.name}:{self.player_2.wins}')
                 elif self.player_2.chosen_gesture in l_hand:
                     self.player_2.wins += 1
                     time.sleep(1)
-                    print (f'\n{self.player_2.name} wins, current score: P1:{self.player_1.wins}, P2:{self.player_2.wins}')    
+                    print (f'\n{self.player_2.name} wins, current score: {self.player_1_name}:{self.player_1.wins}, {self.player_2.name}:{self.player_2.wins}')    
                 else:
                     print(f"{self.player_2_name} picked {self.player_2_gesture} which is the same gesture as player 1, please try again")
             
@@ -97,11 +97,11 @@ class Game:
                 if self.player_2.chosen_gesture in w_hand:
                     self.player_1.wins += 1 
                     time.sleep(1)
-                    print (f'\n{self.player_1_name} wins current score: P1:{self.player_1.wins}, P2:{self.player_2.wins}')
+                    print (f'\n{self.player_1_name} wins current score: {self.player_1_name}:{self.player_1.wins}, {self.player_2_name}:{self.player_2.wins}')
                 elif self.player_2.chosen_gesture in l_hand:
                     self.player_2.wins += 1
                     time.sleep(1)
-                    print (f'\n{self.player_2.name} wins, current score: P1:{self.player_1.wins}, P2:{self.player_2.wins}')    
+                    print (f'\n{self.player_2.name} wins, current score: {self.player_1_name}:{self.player_1.wins}, {self.player_2_name}:{self.player_2.wins}')    
                 else:
                     time.sleep(1)
                     print("player 2 picked the same gesture as player 1, please try again")
@@ -112,11 +112,11 @@ class Game:
                 if self.player_2.chosen_gesture in w_hand:
                     self.player_1.wins += 1 
                     time.sleep(1)
-                    print (f'\n{self.player_1_name} wins current score: P1:{self.player_1.wins}, P2:{self.player_2.wins}')
+                    print (f'\n{self.player_1_name} wins current score: {self.player_1_name}:{self.player_1.wins}, {self.player_2_name}:{self.player_2.wins}')
                 elif self.player_2.chosen_gesture in l_hand:
                     self.player_2.wins += 1
                     time.sleep(1)
-                    print (f'\n{self.player_2.name} wins, current score: P1:{self.player_1.wins}, P2:{self.player_2.wins}')    
+                    print (f'\n{self.player_2.name} wins, current score: {self.player_1_name}:{self.player_1.wins}, {self.player_2_name}:{self.player_2.wins}')    
                 else:
                     time.sleep(1)
                     print("player 2 picked the same gesture as player 1, please try again")
@@ -127,11 +127,11 @@ class Game:
                 if self.player_2.chosen_gesture in w_hand:
                     self.player_1.wins += 1 
                     time.sleep(1)
-                    print (f'\n{self.player_1_name} wins current score: P1:{self.player_1.wins}, P2:{self.player_2.wins}')
+                    print (f'\n{self.player_1_name} wins current score: {self.player_1_name}:{self.player_1.wins}, {self.player_2_name}:{self.player_2.wins}')
                 elif self.player_2.chosen_gesture in l_hand:
                     self.player_2.wins += 1
                     time.sleep(1)
-                    print (f'\n{self.player_2.name} wins, current score: P1:{self.player_1.wins}, P2:{self.player_2.wins}')    
+                    print (f'\n{self.player_2.name} wins, current score: {self.player_1_name}:{self.player_1.wins}, {self.player_2_name}:{self.player_2.wins}')    
                 else:
                     time.sleep(1)
                     print("player 2 picked the same gesture as player 1, please try again")
@@ -142,11 +142,11 @@ class Game:
                 if self.player_2.chosen_gesture in w_hand:
                     self.player_1.wins += 1 
                     time.sleep(1)
-                    print (f'\n{self.player_1_name} wins current score: P1:{self.player_1.wins}, P2:{self.player_2.wins}')
+                    print (f'\n{self.player_1_name} wins current score: {self.player_1_name}:{self.player_1.wins}, {self.player_2_name}:{self.player_2.wins}')
                 elif self.player_2.chosen_gesture in l_hand:
                     self.player_2.wins += 1
                     time.sleep(1)
-                    print (f'\n{self.player_2.name} wins, current score: P1:{self.player_1.wins}, P2:{self.player_2.wins}')    
+                    print (f'\n{self.player_2.name} wins, current score: {self.player_1_name}:{self.player_1.wins}, {self.player_2_name}:{self.player_2.wins}')    
                 else:
                     time.sleep(1)
                     print("player 2 picked the same gesture as player 1, please try again")
@@ -161,12 +161,13 @@ class Game:
                 self.battle()
         elif self.player_2.wins == 3:
             print(f'{self.player_2.name} wins the game')
+            again = input ('Would you like to play again? Y/N ')
             if again == 'Y' or 'y':
                 self.player_1.wins = 0
                 self.player_2.wins = 0
                 self.battle()
-        else:
-            return
+        # else:
+        #     return
              
  
 
