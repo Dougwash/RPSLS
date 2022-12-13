@@ -9,3 +9,5 @@ class AI(Player):
    
     def choose_gesture(self):  # using method overide to give custom AI logic
         self.chosen_gesture = random.choice(self.list_of_gestures)
+        if self.chosen_gesture == '':
+            self.choose_gesture()
