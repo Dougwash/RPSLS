@@ -12,7 +12,8 @@ class Game:
         self.player_1 = Human(self.player_1_name,self.player_1_gesture)
         self.player_2 = None
         self.counter = 0  
-        self.hand = ['' '']      
+        self.hand = ['' '']   
+
     def game_rules(self):
         print("                Welcome to RPSLS\na game where two opponens pick a gesture to see who will win.\n")
         time.sleep(2)
@@ -88,7 +89,7 @@ class Game:
                     time.sleep(1)
                     print (f'\n{self.player_2.name} wins, current score: {self.player_1_name}:{self.player_1.wins}, {self.player_2.name}:{self.player_2.wins}')    
                 else:
-                    print(f"{self.player_2_name} picked {self.player_2_gesture} which is the same gesture as player 1, please try again")
+                    print(f"\n{self.player_2_name} picked {self.player_2.chosen_gesture} which is the same gesture as player 1, please try again")
             
     
             elif self.player_1.chosen_gesture == "Scissors":
@@ -104,7 +105,7 @@ class Game:
                     print (f'\n{self.player_2.name} wins, current score: {self.player_1_name}:{self.player_1.wins}, {self.player_2_name}:{self.player_2.wins}')    
                 else:
                     time.sleep(1)
-                    print("player 2 picked the same gesture as player 1, please try again")
+                    print(f"\n{self.player_2_name} picked {self.player_2.chosen_gesture} which is the same gesture as player 1, please try again")
 
             elif self.player_1.chosen_gesture == "Paper":
                 w_hand =['Rock','Spock'] #>
@@ -119,7 +120,7 @@ class Game:
                     print (f'\n{self.player_2.name} wins, current score: {self.player_1_name}:{self.player_1.wins}, {self.player_2_name}:{self.player_2.wins}')    
                 else:
                     time.sleep(1)
-                    print("player 2 picked the same gesture as player 1, please try again")
+                    print(f"\n{self.player_2_name} picked {self.player_2.chosen_gesture} which is the same gesture as player 1, please try again")
 
             elif self.player_1.chosen_gesture == "Lizard":
                 w_hand =['Paper','Spock'] #>
@@ -134,7 +135,7 @@ class Game:
                     print (f'\n{self.player_2.name} wins, current score: {self.player_1_name}:{self.player_1.wins}, {self.player_2_name}:{self.player_2.wins}')    
                 else:
                     time.sleep(1)
-                    print("player 2 picked the same gesture as player 1, please try again")
+                    print(f"\n{self.player_2_name} picked {self.player_2.chosen_gesture} which is the same gesture as player 1, please try again")
 
             elif self.player_1.chosen_gesture == "Spock":
                 w_hand =['Rock',"Scissors"] #>
@@ -149,28 +150,51 @@ class Game:
                     print (f'\n{self.player_2.name} wins, current score: {self.player_1_name}:{self.player_1.wins}, {self.player_2_name}:{self.player_2.wins}')    
                 else:
                     time.sleep(1)
-                    print("player 2 picked the same gesture as player 1, please try again")
+                    print(f"\n{self.player_2_name} picked {self.player_2.chosen_gesture} which is the same gesture as player 1, please try again")
+        if self.player_1.wins == 3 or self.player_2.wins ==3:
+            self.winner()    
 
     def winner(self): # if self.player_1.wins == 3       next line would just be a print saying print(F'{self.player_1.name} wins the game')
+        
         if self.player_1.wins == 3:
-            print (f'{self.player_1_name} wins the game')
-            again = input ('Would you like to play again? Y/N ')
-            if again == 'Y' or 'y':
-                self.player_1.wins = 0
-                self.player_2.wins = 0
-                self.battle()
+            print (f'\n{self.player_1_name} wins the game')
+            self.again()
+            # again = input ('Would you like to play again? Y/N ')
+            # if again == 'Y' or 'y':
+            #     self.player_1.wins = 0
+            #     self.player_2.wins = 0
+            #     self.battle()
+            # elif again == 'N' or 'n':
+            #     return
+            # else:
+            #     self.winner()
+  
         elif self.player_2.wins == 3:
-            print(f'{self.player_2.name} wins the game')
-            again = input ('Would you like to play again? Y/N ')
-            if again == 'Y' or 'y':
-                self.player_1.wins = 0
-                self.player_2.wins = 0
-                self.battle()
+            print(f'\n{self.player_2.name} wins the game')
+            self.again()
+        #     again = input ('Would you like to play again? Y/N ')
+        #     if again == 'Y' or 'y':
+        #         self.player_1.wins = 0
+        #         self.player_2.wins = 0
+        #         self.battle()
+        #     elif again == 'N' or 'n':
+        #         return
         # else:
-        #     return
+        #     self.winner()
              
  
-
+    def again (self):
+        again = input ('Would you like to play again? Y/N ')
+        if again == 'Y':
+            self.player_1.wins = 0
+            self.player_2.wins = 0
+            self.battle()
+        elif again == 'N':
+            return
+        else:
+            print('please enter Y or yes or N for no')
+            self.again()
+      
         
             
             
@@ -179,7 +203,7 @@ class Game:
         self.find_name()       
         self.ai_or_human()
         self.battle()
-        self.winner()
+        # self.winner()
 
 
 
